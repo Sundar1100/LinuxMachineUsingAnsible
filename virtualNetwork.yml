@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: Creating a virtual Network..
+    azure_rm_virtualnetwork: EntryLevelTrainees-2113029-RG
+    name: Ansible_virtual_network
+    address_prefixes: "10.0.0.0/16"
+    
