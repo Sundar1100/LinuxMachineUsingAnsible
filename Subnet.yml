@@ -1,0 +1,10 @@
+---
+- host: localhost
+  connection: local
+  tasks:
+  - name: Creating a subnet for Virtualnetwork
+    azure_rm_subnet:
+    azure_rm_virtualnetwork: EntryLevelTrainees-2113029-RG
+    name: Subnet-1
+    address_prefix: "10.0.1.0/24"
+    virtual_network: Ansible_virtual_network

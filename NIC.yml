@@ -1,0 +1,12 @@
+---
+- host: localhost
+  connection: local
+  tasks:
+  - name: Creating_NIC
+    azure_rm_networkinterface:
+    azure_rm_virtualnetwork: EntryLevelTrainees-2113029-RG
+    name: NIC
+    virtual_network: Ansible_virtual_network
+    subnet: Subnet-1
+    public_ip_name: public_ip_ansible
+    security_group: NSG_Ansible_VM

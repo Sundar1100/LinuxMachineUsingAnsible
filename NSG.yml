@@ -1,0 +1,22 @@
+---
+- host: localhost
+  connection: local
+  tasks:
+  - name: Creating a Network_Security_Group
+    azure_rm_securitygroup:
+    azure_rm_virtualnetwork: EntryLevelTrainees-2113029-RG
+    name: NSG_Ansible_VM
+    rules:
+      - name: SSH
+        protocol: Tcp
+        destination_port_range: 22
+        access: Allow
+        priority: 1001
+        direction: Inbound
+      - name: HTTPS
+        protocol: Tcp
+        destination_port_range: 80
+        access: Allow
+        priority: 1001
+        direction: Inbound
+      

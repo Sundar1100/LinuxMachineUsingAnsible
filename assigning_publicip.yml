@@ -1,0 +1,9 @@
+---
+- host: localhost
+  connection: local
+  tasks:
+  - name: Assigning public ip
+    azure_rm_publicipaddress:
+    azure_rm_virtualnetwork: EntryLevelTrainees-2113029-RG
+    name: public_ip_ansible
+    allocation_method: Static
