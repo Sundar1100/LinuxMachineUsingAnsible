@@ -29,4 +29,9 @@ stages:
     - task: Docker@0
       displayName: Running an image
       inputs:
-        customCommand: docker run -it ansible
+        customCommand: docker run -it ansible 
+    - task: Docker@1
+      displayName: Install
+      inputs:
+        customCommand: yum install vi -y | yum install git
+        
