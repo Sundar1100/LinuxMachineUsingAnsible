@@ -25,5 +25,8 @@ stages:
       inputs:
         command: build
         dockerfile: '**/Dockerfile'
-        tags: |
-          $(tag)
+        tags: ansible
+    - task: Docker@0
+      displayName: Running an image
+      inputs:
+        customCommand: docker run -it ansible
